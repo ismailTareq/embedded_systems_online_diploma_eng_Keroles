@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1716198469 source:c:\users\ismail\downloads\c-programing\queue(fifo)\fifo.c
+	"FIFO.h"
+
+1716198469 c:\users\ismail\downloads\c-programing\queue(fifo)\fifo.h
+	<stdio.h>
+	<stdlib.h>
+	"stdint.h"
+	"stdlib.h"
+
+1716196382 source:c:\users\ismail\downloads\c-programing\queue(fifo)\main.c
+	"FIFO.h"
+

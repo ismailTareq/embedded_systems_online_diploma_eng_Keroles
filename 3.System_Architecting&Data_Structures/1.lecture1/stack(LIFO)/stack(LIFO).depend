@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1716193931 source:c:\users\ismail\downloads\c-programing\stack(lifo)\lifo.c
+	"LIFO.h"
+
+1716192984 c:\users\ismail\downloads\c-programing\stack(lifo)\lifo.h
+	<stdio.h>
+	<stdlib.h>
+	"stdlib.h"
+
+1716192984 source:c:\users\ismail\downloads\c-programing\stack(lifo)\main.c
+	"LIFO.h"
+
