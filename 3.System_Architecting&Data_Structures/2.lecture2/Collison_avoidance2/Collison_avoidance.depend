@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1716381584 source:c:\users\ismail\downloads\c-programing\collison_avoidance\ca.c
+	"CA.h"
+
+1716319744 c:\users\ismail\downloads\c-programing\collison_avoidance\ca.h
+	<stdio.h>
+	<stdlib.h>
+	"state.h"
+
+1716381385 c:\users\ismail\downloads\c-programing\collison_avoidance\state.h
+
+1716381677 source:c:\users\ismail\downloads\c-programing\collison_avoidance\main.c
+	"CA.h"
+	"US.h"
+	"DC.h"
+
+1716381385 source:c:\users\ismail\downloads\c-programing\collison_avoidance\dc.c
+	"DC.h"
+
+1716381385 c:\users\ismail\downloads\c-programing\collison_avoidance\dc.h
+	<stdio.h>
+	<stdlib.h>
+	"state.h"
+
+1716381568 source:c:\users\ismail\downloads\c-programing\collison_avoidance\us.c
+	"US.h"
+
+1716380164 c:\users\ismail\downloads\c-programing\collison_avoidance\us.h
+	<stdio.h>
+	<stdlib.h>
+	"state.h"
+
