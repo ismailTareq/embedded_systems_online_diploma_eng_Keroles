@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1717583102 source:c:\users\ismail\downloads\c-programing\double_linked_list\main.c
+	"DLL.h"
+
+1717578335 c:\users\ismail\downloads\c-programing\double_linked_list\dll.h
+	<stdio.h>
+	<stdlib.h>
+
+1717583113 source:c:\users\ismail\downloads\c-programing\double_linked_list\dll.c
+	"DLL.h"
+
