@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1717767080 source:c:\users\ismail\downloads\c-programing\student_managment_queue\main.c
+	"student.h"
+
+1717683038 source:c:\users\ismail\downloads\c-programing\student_managment_queue\queue.c
+	"queue.h"
+
+1717683038 c:\users\ismail\downloads\c-programing\student_managment_queue\queue.h
+	<stdio.h>
+	<stdlib.h>
+	"stdint.h"
+	"student.h"
+
+1717790249 source:c:\users\ismail\downloads\c-programing\student_managment_queue\student.c
+	"student.h"
+
+1717767080 c:\users\ismail\downloads\c-programing\student_managment_queue\student.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"stdint.h"
+	"conio.h"
+
