@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1702568243 source:c:\users\ismail\documents\c\sudokuds\main.c
+	<stdio.h>
+	<stdbool.h>
+

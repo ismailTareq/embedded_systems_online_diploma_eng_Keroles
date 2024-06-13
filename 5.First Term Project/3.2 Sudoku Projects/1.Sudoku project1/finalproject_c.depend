@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1702727567 source:c:\users\ismail\documents\c\finalproject_c\main.c
+	"sudooku.h"
+
+1702727060 c:\users\ismail\documents\c\finalproject_c\sudooku.h
+	<stdio.h>
+	<stdlib.h>
+
+1702727567 source:c:\users\ismail\documents\c\finalproject_c\box.c
+	"sudooku.h"
+
+1702729477 source:c:\users\ismail\documents\c\finalproject_c\sudooku.c
+	"sudooku.h"
+
+1702723285 source:c:\users\ismail\documents\c\finalproject_c\solve_square.c
+	"sudooku.h"
+
+1702731082 source:c:\users\ismail\documents\c\finalproject_c\checkrow.c
+	"sudooku.h"
+
+1702729269 source:c:\users\ismail\documents\c\finalproject_c\check_columns.c
+	"sudooku.h"
+
