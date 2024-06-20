@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1661678864 source:c:\users\ismail\desktop\final project\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<conio.h>
+
+1661680022 source:g:\embedded\new embedded\5.student_database_amit\final project.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<conio.h>
+
