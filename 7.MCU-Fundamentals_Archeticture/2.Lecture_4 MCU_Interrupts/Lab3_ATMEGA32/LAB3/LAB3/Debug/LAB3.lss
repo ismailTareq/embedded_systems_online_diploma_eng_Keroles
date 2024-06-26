@@ -1,0 +1,277 @@
+
+LAB3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00000180  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  000001d4  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .comment      00000030  00000000  00000000  000001d4  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00000204  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000048  00000000  00000000  00000240  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000006e6  00000000  00000000  00000288  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000005b4  00000000  00000000  0000096e  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000321  00000000  00000000  00000f22  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000000c8  00000000  00000000  00001244  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000344  00000000  00000000  0000130c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    000001da  00000000  00000000  00001650  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000038  00000000  00000000  0000182a  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 6a 00 	jmp	0xd4	; 0xd4 <__vector_1>
+   8:	0c 94 86 00 	jmp	0x10c	; 0x10c <__vector_2>
+   c:	0c 94 a2 00 	jmp	0x144	; 0x144 <__vector_3>
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+  60:	0e 94 5c 00 	call	0xb8	; 0xb8 <main>
+  64:	0c 94 be 00 	jmp	0x17c	; 0x17c <_exit>
+
+00000068 <__bad_interrupt>:
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000006c <EXTI_Init>:
+#define SET_BIT(ADDRESS, BIT) ADDRESS |= (1<<BIT)
+#define CLR_BIT(ADDRESS, BIT) ADDRESS &= ~(1<<BIT)
+void EXTI_Init()
+{
+	//INT0 generated in any logical change
+	SET_BIT(MCUCR,0);
+  6c:	85 b7       	in	r24, 0x35	; 53
+  6e:	81 60       	ori	r24, 0x01	; 1
+  70:	85 bf       	out	0x35, r24	; 53
+	CLR_BIT(MCUCR,1);
+  72:	85 b7       	in	r24, 0x35	; 53
+  74:	8d 7f       	andi	r24, 0xFD	; 253
+  76:	85 bf       	out	0x35, r24	; 53
+	//INT1 generated in a rising edge
+	SET_BIT(MCUCR,2);
+  78:	85 b7       	in	r24, 0x35	; 53
+  7a:	84 60       	ori	r24, 0x04	; 4
+  7c:	85 bf       	out	0x35, r24	; 53
+	SET_BIT(MCUCR,3);
+  7e:	85 b7       	in	r24, 0x35	; 53
+  80:	88 60       	ori	r24, 0x08	; 8
+  82:	85 bf       	out	0x35, r24	; 53
+	//INT2 generated in falling edge
+	CLR_BIT(MCUCSR,6);
+  84:	84 b7       	in	r24, 0x34	; 52
+  86:	8f 7b       	andi	r24, 0xBF	; 191
+  88:	84 bf       	out	0x34, r24	; 52
+	//enable interrupts
+	SET_BIT(GICR,7); 
+  8a:	8b b7       	in	r24, 0x3b	; 59
+  8c:	80 68       	ori	r24, 0x80	; 128
+  8e:	8b bf       	out	0x3b, r24	; 59
+	SET_BIT(GICR,6); 
+  90:	8b b7       	in	r24, 0x3b	; 59
+  92:	80 64       	ori	r24, 0x40	; 64
+  94:	8b bf       	out	0x3b, r24	; 59
+	SET_BIT(GICR,5); 
+  96:	8b b7       	in	r24, 0x3b	; 59
+  98:	80 62       	ori	r24, 0x20	; 32
+  9a:	8b bf       	out	0x3b, r24	; 59
+	//Global interrupt enable
+	SET_BIT(SREG,7);
+  9c:	8f b7       	in	r24, 0x3f	; 63
+  9e:	80 68       	ori	r24, 0x80	; 128
+  a0:	8f bf       	out	0x3f, r24	; 63
+  a2:	08 95       	ret
+
+000000a4 <Gpio_Init>:
+}
+void Gpio_Init()
+{
+	//set the direction for pins (5,6,7) as output pins
+	SET_BIT(DDRD,5);
+  a4:	81 b3       	in	r24, 0x11	; 17
+  a6:	80 62       	ori	r24, 0x20	; 32
+  a8:	81 bb       	out	0x11, r24	; 17
+	SET_BIT(DDRD,6);
+  aa:	81 b3       	in	r24, 0x11	; 17
+  ac:	80 64       	ori	r24, 0x40	; 64
+  ae:	81 bb       	out	0x11, r24	; 17
+	SET_BIT(DDRD,7);
+  b0:	81 b3       	in	r24, 0x11	; 17
+  b2:	80 68       	ori	r24, 0x80	; 128
+  b4:	81 bb       	out	0x11, r24	; 17
+  b6:	08 95       	ret
+
+000000b8 <main>:
+}
+int main(void)
+{
+	Gpio_Init();
+  b8:	0e 94 52 00 	call	0xa4	; 0xa4 <Gpio_Init>
+	EXTI_Init();
+  bc:	0e 94 36 00 	call	0x6c	; 0x6c <EXTI_Init>
+    while (1) 
+    {
+		CLR_BIT(PORTD,5);
+  c0:	82 b3       	in	r24, 0x12	; 18
+  c2:	8f 7d       	andi	r24, 0xDF	; 223
+  c4:	82 bb       	out	0x12, r24	; 18
+		CLR_BIT(PORTD,6);
+  c6:	82 b3       	in	r24, 0x12	; 18
+  c8:	8f 7b       	andi	r24, 0xBF	; 191
+  ca:	82 bb       	out	0x12, r24	; 18
+		CLR_BIT(PORTD,7);
+  cc:	82 b3       	in	r24, 0x12	; 18
+  ce:	8f 77       	andi	r24, 0x7F	; 127
+  d0:	82 bb       	out	0x12, r24	; 18
+  d2:	f6 cf       	rjmp	.-20     	; 0xc0 <main+0x8>
+
+000000d4 <__vector_1>:
+    }
+}
+ISR(INT0_vect)
+{
+  d4:	1f 92       	push	r1
+  d6:	0f 92       	push	r0
+  d8:	0f b6       	in	r0, 0x3f	; 63
+  da:	0f 92       	push	r0
+  dc:	11 24       	eor	r1, r1
+  de:	2f 93       	push	r18
+  e0:	8f 93       	push	r24
+  e2:	9f 93       	push	r25
+	SET_BIT(PORTD,5);
+  e4:	82 b3       	in	r24, 0x12	; 18
+  e6:	80 62       	ori	r24, 0x20	; 32
+  e8:	82 bb       	out	0x12, r24	; 18
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  ea:	2f e7       	ldi	r18, 0x7F	; 127
+  ec:	8a e1       	ldi	r24, 0x1A	; 26
+  ee:	96 e0       	ldi	r25, 0x06	; 6
+  f0:	21 50       	subi	r18, 0x01	; 1
+  f2:	80 40       	sbci	r24, 0x00	; 0
+  f4:	90 40       	sbci	r25, 0x00	; 0
+  f6:	e1 f7       	brne	.-8      	; 0xf0 <__vector_1+0x1c>
+  f8:	00 c0       	rjmp	.+0      	; 0xfa <__vector_1+0x26>
+  fa:	00 00       	nop
+	_delay_ms(2000);
+}
+  fc:	9f 91       	pop	r25
+  fe:	8f 91       	pop	r24
+ 100:	2f 91       	pop	r18
+ 102:	0f 90       	pop	r0
+ 104:	0f be       	out	0x3f, r0	; 63
+ 106:	0f 90       	pop	r0
+ 108:	1f 90       	pop	r1
+ 10a:	18 95       	reti
+
+0000010c <__vector_2>:
+ISR(INT1_vect)
+{
+ 10c:	1f 92       	push	r1
+ 10e:	0f 92       	push	r0
+ 110:	0f b6       	in	r0, 0x3f	; 63
+ 112:	0f 92       	push	r0
+ 114:	11 24       	eor	r1, r1
+ 116:	2f 93       	push	r18
+ 118:	8f 93       	push	r24
+ 11a:	9f 93       	push	r25
+	SET_BIT(PORTD,6);
+ 11c:	82 b3       	in	r24, 0x12	; 18
+ 11e:	80 64       	ori	r24, 0x40	; 64
+ 120:	82 bb       	out	0x12, r24	; 18
+ 122:	2f e7       	ldi	r18, 0x7F	; 127
+ 124:	8a e1       	ldi	r24, 0x1A	; 26
+ 126:	96 e0       	ldi	r25, 0x06	; 6
+ 128:	21 50       	subi	r18, 0x01	; 1
+ 12a:	80 40       	sbci	r24, 0x00	; 0
+ 12c:	90 40       	sbci	r25, 0x00	; 0
+ 12e:	e1 f7       	brne	.-8      	; 0x128 <__vector_2+0x1c>
+ 130:	00 c0       	rjmp	.+0      	; 0x132 <__vector_2+0x26>
+ 132:	00 00       	nop
+	_delay_ms(2000);
+}
+ 134:	9f 91       	pop	r25
+ 136:	8f 91       	pop	r24
+ 138:	2f 91       	pop	r18
+ 13a:	0f 90       	pop	r0
+ 13c:	0f be       	out	0x3f, r0	; 63
+ 13e:	0f 90       	pop	r0
+ 140:	1f 90       	pop	r1
+ 142:	18 95       	reti
+
+00000144 <__vector_3>:
+ISR(INT2_vect)
+{
+ 144:	1f 92       	push	r1
+ 146:	0f 92       	push	r0
+ 148:	0f b6       	in	r0, 0x3f	; 63
+ 14a:	0f 92       	push	r0
+ 14c:	11 24       	eor	r1, r1
+ 14e:	2f 93       	push	r18
+ 150:	8f 93       	push	r24
+ 152:	9f 93       	push	r25
+	SET_BIT(PORTD,7);
+ 154:	82 b3       	in	r24, 0x12	; 18
+ 156:	80 68       	ori	r24, 0x80	; 128
+ 158:	82 bb       	out	0x12, r24	; 18
+ 15a:	2f e7       	ldi	r18, 0x7F	; 127
+ 15c:	8a e1       	ldi	r24, 0x1A	; 26
+ 15e:	96 e0       	ldi	r25, 0x06	; 6
+ 160:	21 50       	subi	r18, 0x01	; 1
+ 162:	80 40       	sbci	r24, 0x00	; 0
+ 164:	90 40       	sbci	r25, 0x00	; 0
+ 166:	e1 f7       	brne	.-8      	; 0x160 <__vector_3+0x1c>
+ 168:	00 c0       	rjmp	.+0      	; 0x16a <__vector_3+0x26>
+ 16a:	00 00       	nop
+	_delay_ms(2000);
+}
+ 16c:	9f 91       	pop	r25
+ 16e:	8f 91       	pop	r24
+ 170:	2f 91       	pop	r18
+ 172:	0f 90       	pop	r0
+ 174:	0f be       	out	0x3f, r0	; 63
+ 176:	0f 90       	pop	r0
+ 178:	1f 90       	pop	r1
+ 17a:	18 95       	reti
+
+0000017c <_exit>:
+ 17c:	f8 94       	cli
+
+0000017e <__stop_program>:
+ 17e:	ff cf       	rjmp	.-2      	; 0x17e <__stop_program>

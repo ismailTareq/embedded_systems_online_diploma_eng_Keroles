@@ -1,0 +1,4 @@
+../Src/main.c:53:6:clock_Init	4	static
+../Src/main.c:60:6:Gpio_Init	4	static
+../Src/main.c:67:5:main	8	static
+../Src/main.c:87:6:EXTI0_IRQHandler	4	static
