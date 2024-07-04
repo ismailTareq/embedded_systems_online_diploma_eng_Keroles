@@ -1,0 +1,4 @@
+../Src/main.c:22:6:Clock_Init	4	static
+../Src/main.c:29:6:Gpio_Init	16	static
+../Src/main.c:55:6:delay	24	static
+../Src/main.c:63:5:main	8	static
