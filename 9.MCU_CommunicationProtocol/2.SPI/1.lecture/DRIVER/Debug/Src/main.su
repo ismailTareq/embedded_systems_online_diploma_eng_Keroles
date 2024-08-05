@@ -1,0 +1,4 @@
+../Src/main.c:32:5:main	56	static
+../Src/main.c:97:13:Clock_Init	4	static
+../Src/main.c:111:13:USART1_CallBack	4	static
+../Src/main.c:130:13:SPI1_CallBack	16	static

@@ -1,0 +1,4 @@
+../Stm32_F103C6_Drivers/RCC.c:31:10:RCC_Get_SYSCLK_Frequency	4	static
+../Stm32_F103C6_Drivers/RCC.c:52:10:RCC_Get_HCLK_Frequency	8	static
+../Stm32_F103C6_Drivers/RCC.c:57:10:RCC_Get_PCLK1_Frequency	8	static
+../Stm32_F103C6_Drivers/RCC.c:62:10:RCC_Get_PCLK2_Frequency	8	static
