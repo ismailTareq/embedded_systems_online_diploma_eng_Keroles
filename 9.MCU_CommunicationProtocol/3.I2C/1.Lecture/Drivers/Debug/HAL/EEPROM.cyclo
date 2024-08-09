@@ -1,0 +1,3 @@
+../HAL/EEPROM.c:10:6:EEPROM_Init	1
+../HAL/EEPROM.c:27:9:EEPROM_Write_NBytes	2
+../HAL/EEPROM.c:43:9:EEPROM_Read_NBytes	1
