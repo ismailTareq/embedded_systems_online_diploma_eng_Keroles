@@ -1,0 +1,6 @@
+../MY_RTOS/CortexMX_OS_porting.c:10:6:HW_init	1
+../MY_RTOS/CortexMX_OS_porting.c:25:6:HardFault_Handler	1
+../MY_RTOS/CortexMX_OS_porting.c:29:6:MemManage_Handler	1
+../MY_RTOS/CortexMX_OS_porting.c:33:6:BusFault_Handler	1
+../MY_RTOS/CortexMX_OS_porting.c:37:6:UsageFault_Handler	1
+../MY_RTOS/CortexMX_OS_porting.c:42:27:SVC_Handler	1

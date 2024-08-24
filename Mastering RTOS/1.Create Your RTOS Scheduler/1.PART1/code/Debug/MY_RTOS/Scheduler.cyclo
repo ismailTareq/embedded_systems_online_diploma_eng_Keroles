@@ -1,0 +1,9 @@
+../MY_RTOS/Scheduler.c:34:6:IsmailRTOS_IdleTask	1
+../MY_RTOS/Scheduler.c:40:6:IsmailRTOS_Create_IdleTask	1
+../MY_RTOS/Scheduler.c:49:6:IsmailRTOS_Create_MainStack	1
+../MY_RTOS/Scheduler.c:56:20:IsmailRTOS_Init	2
+../MY_RTOS/Scheduler.c:79:6:IsmailRTOS_CreateTask_Stack	2
+../MY_RTOS/Scheduler.c:116:20:IsmailRTOS_CreateTask	2
+../MY_RTOS/Scheduler.c:151:6:Os_SVC_Services	2
+../MY_RTOS/Scheduler.c:167:6:PendSV_Handler	1
+../MY_RTOS/Scheduler.c:171:6:OS_SVC_SET	3
