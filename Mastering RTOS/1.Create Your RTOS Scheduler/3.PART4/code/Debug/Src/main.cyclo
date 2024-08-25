@@ -1,0 +1,5 @@
+../Src/main.c:26:6:Task_A	1
+../Src/main.c:42:6:Task_B	1
+../Src/main.c:51:6:Task_C	1
+../Src/main.c:60:6:Task_D	1
+../Src/main.c:76:5:main	2
