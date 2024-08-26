@@ -1,0 +1,5 @@
+../Src/main.c:29:6:Task_A	8	static
+../Src/main.c:51:6:Task_B	8	static
+../Src/main.c:70:6:Task_C	8	static
+../Src/main.c:89:6:Task_D	8	static
+../Src/main.c:110:5:main	24	static
