@@ -1,9 +1,0 @@
-../Stm32_F103C6_Drivers/GPIO.c:8:9:Get_PinPostion	16	static
-../Stm32_F103C6_Drivers/GPIO.c:64:6:GPIO_Init	32	static
-../Stm32_F103C6_Drivers/GPIO.c:138:6:GPIO_DeInit	16	static
-../Stm32_F103C6_Drivers/GPIO.c:188:9:GPIO_READ_Pin	16	static
-../Stm32_F103C6_Drivers/GPIO.c:196:10:GPIO_READ_Port	16	static
-../Stm32_F103C6_Drivers/GPIO.c:209:6:GPIO_WRITE_Pin	16	static
-../Stm32_F103C6_Drivers/GPIO.c:235:6:GPIO_WRITE_Port	16	static
-../Stm32_F103C6_Drivers/GPIO.c:247:6:GPIO_TOGGLE_Pin	16	static
-../Stm32_F103C6_Drivers/GPIO.c:259:9:GPIO_LOCK_Pin	24	static
