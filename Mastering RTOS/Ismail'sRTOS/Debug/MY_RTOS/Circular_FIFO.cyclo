@@ -1,0 +1,4 @@
+../MY_RTOS/Circular_FIFO.c:9:15:FIFO_init	2
+../MY_RTOS/Circular_FIFO.c:26:15:FIFO_enqueue	6
+../MY_RTOS/Circular_FIFO.c:56:15:FIFO_dequeue	5
+../MY_RTOS/Circular_FIFO.c:84:15:FIFO_is_full	5
