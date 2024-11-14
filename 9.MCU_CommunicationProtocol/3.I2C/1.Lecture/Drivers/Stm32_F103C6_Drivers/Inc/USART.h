@@ -50,7 +50,7 @@ typedef enum {
 //-*-*-*-*-*-*-*-*-*-*-*
 // @ref UART_Mode_define
 #define UART_MODE_RX                        (uint32_t) (1<<2)  //RE =1
-#define UART_MODE_TX                       	(uint32_t) (1<<3) //TE =1
+#define UART_MODE_TX                        (uint32_t) (1<<3) //TE =1
 #define UART_MODE_TX_RX                     ((uint32_t)(1<<2 | 1<<3))
 
 //@ref UART_BaudRate_define
